@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<title>Document</title>
+</head>
+<body>
+     <!-- Navigation-->
+     <nav class="navbar navbar-light bg-light static-top">
+        <div class="container">
+            <a class="navbar-brand" href="mainAutobusero.html">UbicaBUS</a>
+        </div>
+    </nav>
+	<div class="ml-3" style="
+    margin-left: 35px;
+    margin-top: 50px;
+">
+		<div class="d-flex flex-column min-vh-justify-content-center ">
+			<h2>Insertar ruta</h2>
+		</div>
+		<hr style="
+		width: 700px;
+	">
+		<div class="d-flex flex-column justify-content-center ">
+			
+			<form>
+				<div class="form-group">
+				<label for="exampleInputEmail1">Código de ruta</label>
+				<input type="text" class="form-control w-25" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group">
+				<label for="examplecompany">Nombre de la ruta</label>
+				<input type="text"class="form-control w-25" id="examplecompany" >
+				</div>
+				<hr style="
+					width: 700px;
+				">
+				<div class="form-group">
+					<label for="latitudf">Latitud del punto</label>
+					<input type="text" class="form-control w-25" id="latitudf" aria-describedby="emailHelp">
+				</div>
+				<div class="form-group"></div>
+					<label for="latitudf">Longitud del punto</label>
+					<input type="text" class="form-control w-25" id="longitudf" aria-describedby="emailHelp">
+				</div>
+				<button type="button" onclick="addpunto()"  style="margin-top: 20px;" class="btn btn-primary">Añadir punto</button>
+				<div class="d-flex flex-column justify-content-center w-50">
+					
+					<table class="table" id="tablapuntos">
+						<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Latitud</th>
+							<th scope="col">Longitud</th>
+						</tr>
+						</thead>
+						<tbody>
+						
+						</tbody>
+					</table>
+				</div>
+
+
+				<button type="submit"  style="margin-top: 20px;" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+    
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script>
+			function addpunto() {
+				var table = document.getElementById("tablapuntos").getElementsByTagName('tbody')[0];
+				var rows = table.rows.length;
+				var row = table.insertRow(rows);
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+
+				cell1.innerHTML = rows+1;
+				cell2.innerHTML = document.getElementById("latitudf").value;
+				cell3.innerHTML = document.getElementById("longitudf").value;
+			}
+	</script>
+	</body>
+</html>
